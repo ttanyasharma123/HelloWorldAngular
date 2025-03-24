@@ -1,7 +1,14 @@
 <div>
-  <h1>{{this.title}}</h1>
+  <h1>{{ title }} {{ userName }}</h1>
+
   <img [src]="imgUrl" (click)="onClick($event)"
-  alt="The BridgeLabz logo: a Bridge to Employment through a Lab Works."
+    alt="BridgeLabz Logo"
+    style="cursor: pointer; width: 250px;"
   />
-  </div>
-  <router-outlet> </router-outlet>
+  <br><br>
+
+  <input [(ngModel)]="userName" (input)="onInput()" placeholder="Enter your name" />
+  <br><br>
+
+  <p *ngIf="nameError" style="color: red;">{{ nameError }}</p>
+</div>
